@@ -20,6 +20,48 @@ Pizza Worth is a simple tool that helps you compare the value per square inch of
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/
+git clone https://github.com/ljreaux/pizza-worth
 
 ```
+
+2. Navigate to the project directory:
+
+```bash
+cd pizza-worth
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+
+4. Run the development server:
+
+```bash
+npm run dev
+```
+
+5. Build for production:
+
+```bash
+npm run build
+```
+
+## Usage
+
+1. Enter the diameter (in inches) and the price of two pizzas.
+2. Click the “Compare” button to see the cost per square inch for each pizza.
+3. Choose the pizza that offers the best value!
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- Thanks to the creators of Vue, Vite, and ShadCN Vue components for making this project possible.
