@@ -2,7 +2,7 @@
 import { computed, ref } from "vue";
 import PizzaSVG from "../PizzaSVG.vue";
 import { Slider } from "./ui/slider";
-import { pizzas, pricePerSquareInch } from "../PizzaStore";
+import { pizzas, pricePerSquareInch, areas } from "../PizzaStore";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 const scale = (
@@ -34,6 +34,11 @@ const squareInchLabel = computed(() => {
   );
   return `${asDollars} per square inch`;
 });
+
+const area = computed(() => {
+  return `${areas.value[props.pizzaNumber].toFixed(3)} in<sup>2</sup>` || "0";
+});
+console.log(area.value);
 </script>
 
 <template>
@@ -89,6 +94,7 @@ const squareInchLabel = computed(() => {
         />
       </div>
     </div>
+    <p v-html="area"></p>
     <p>{{ squareInchLabel }}</p>
   </div>
 </template>

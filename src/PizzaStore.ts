@@ -12,6 +12,13 @@ export const pricePerSquareInch = computed(() => {
   return pizzaValues
 });
 
+export const areas = computed(() => {
+  const pizzaValues =
+    pizzas.value.map(pizza => Math.PI * Math.pow(pizza.size / 2, 2)
+    )
+  return pizzaValues
+})
+
 export const betterValue = computed(
   () => {
     if (pricePerSquareInch.value[0] == pricePerSquareInch.value[1]) return pizzas.value[0].size > pizzas.value[1].size
