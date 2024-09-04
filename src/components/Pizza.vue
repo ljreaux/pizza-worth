@@ -29,14 +29,11 @@ const squareInchLabel = computed(() => {
     style: "currency",
     currency: "USD",
   });
-  const asDollars = USDollar.format(
-    pricePerSquareInch.value[props.pizzaNumber] || 0
-  );
-  return `${asDollars} per square inch`;
+  return USDollar.format(pricePerSquareInch.value[props.pizzaNumber] || 0);
 });
 
 const area = computed(() => {
-  return `${areas.value[props.pizzaNumber].toFixed(3)} in<sup>2</sup>` || "0";
+  return `${areas.value[props.pizzaNumber].toFixed(3)}` || "0";
 });
 console.log(area.value);
 </script>
@@ -94,7 +91,9 @@ console.log(area.value);
         />
       </div>
     </div>
-    <p v-html="area"></p>
-    <p>{{ squareInchLabel }}</p>
+    <p>{{ area }} in<sup>2</sup></p>
+    <p>
+      {{ squareInchLabel }}/<sub>in<sup>2</sup></sub>
+    </p>
   </div>
 </template>
